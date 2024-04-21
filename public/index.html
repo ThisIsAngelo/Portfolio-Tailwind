@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,39 +10,114 @@
       href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/88d08e83f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>Portofolio Tailwind</title>
   </head>
   <body>
     <!-- Header Start -->
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-50">
+    <header
+      class="absolute top-0 left-0 z-50 flex items-center w-full bg-transparent"
+    >
       <div class="container">
-        <div class="flex items-center justify-between relative">
+        <div class="relative flex items-center justify-between">
           <div class="px-4">
-            <a href="#home" class="font-bold text-lg text-primary block py-6">Kafka Vollerei</a>
+            <a
+              href="#home"
+              class="block py-6 text-lg font-bold text-primary dark:text-lightprimary"
+              >Kafka Vollerei</a
+            >
           </div>
-          <div class="flex items-center px-4 ">
-            <button id="menu" name="menu" type="button" class="block absolute right-4 lg:hidden">
-              <span class="menu-line transition duration-300 ease-in-out origin-top-left"></span>
-              <span class="menu-line transition duration-300 ease-in-out"></span>
-              <span class="menu-line transition duration-300 ease-in-out origin-bottom-left"></span>
+          <div class="flex items-center px-4">
+            <button
+              id="menu"
+              name="menu"
+              type="button"
+              class="absolute block right-4 lg:hidden"
+            >
+              <span
+                class="transition duration-300 ease-in-out origin-top-left menu-line dark:bg-white"
+              ></span>
+              <span
+                class="transition duration-300 ease-in-out menu-line dark:bg-white"
+              ></span>
+              <span
+                class="transition duration-300 ease-in-out origin-bottom-left menu-line dark:bg-white"
+              ></span>
             </button>
 
-            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full dark:bg-darkmode dark:shadow-slate-500 lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:dark:bg-transparent"
+            >
               <ul class="block lg:flex">
                 <li class="group">
-                  <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Home</a>
+                  <a
+                    href="#home"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Home</a
+                  >
                 </li>
                 <li class="group">
-                  <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">About Me</a>
+                  <a
+                    href="#about"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >About Me</a
+                  >
                 </li>
                 <li class="group">
-                  <a href="#team" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Team</a>
+                  <a
+                    href="#team"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Team</a
+                  >
                 </li>
                 <li class="group">
-                  <a href="#clients" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Clients</a>
+                  <a
+                    href="#clients"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Clients</a
+                  >
                 </li>
                 <li class="group">
-                  <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                  <a
+                    href="#contact"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Contact</a
+                  >
+                </li>
+                <li class="mt-3 lg:mt-0 flex items-center pl-8">
+                  <div class="flex">
+                    <span class="mr-2 text-base text-dark dark:text-white"
+                      >Light</span
+                    >
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-fuchsia-500 p-1"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"
+                        ></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-base text-dark dark:text-white"
+                      >Dark</span
+                    >
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -53,42 +128,52 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-darkmode">
       <div class="container">
         <div class="flex flex-wrap">
           <!-- Left Side Start -->
-          <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-semibold text-primary md:text-xl">
-              Hello Everyone 🍷 i'am
-              <span class="block font-bold text-dark text-4xl lg:text-5xl"
+          <div class="self-center w-full px-4 lg:w-1/2">
+            <h1
+              class="text-base font-semibold text-primary dark:text-lightprimary md:text-xl"
+            >
+              Hello Everyone 🍷 it's
+              <span
+                class="block text-4xl font-bold text-dark lg:text-5xl dark:text-white"
                 >Kafka Vollerei</span
               >
             </h1>
-            <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">
-              Stellaron <span class="text-dark font-semibold">Hunter</span>
+            <h2 class="mb-5 text-lg font-medium text-secondary dark:text-slate-400 lg:text-2xl">
+              Stellaron
+              <span class="font-semibold text-dark dark:text-white"
+                >Hunter</span
+              >
             </h2>
-            <p class="font-medium text-secondary mb-10 leading-relaxed lg:max-w-md">
+            <p
+              class="mb-10 font-medium leading-relaxed text-secondary dark:text-slate-400 lg:max-w-md"
+            >
               People have always imagined her to be elegant, respectable, and in
               pursuit of things of beauty
-              <span class="text-dark font-semibold">even in combat</span>
+              <span class="font-semibold text-dark dark:text-white"
+                >even in combat</span
+              >
             </p>
             <a
               href="#"
-              class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:bg-fuchsia-400 hover:opacity-90 transition duration-300 ease-in-out"
+              class="px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out rounded-full bg-primary hover:shadow-lg hover:bg-fuchsia-400 hover:opacity-90"
               >Get In Touch</a
             >
           </div>
           <!-- Left Side End -->
 
           <!-- Right Side Start -->
-          <div class="w-full self-end px-4 lg:w-1/2">
+          <div class="self-end w-full px-4 lg:w-1/2">
             <div class="relative mt-10 lg:mt-0 lg:right-0">
               <img
                 src="img/profile.png"
                 alt="profile"
-                class="max-w-full mx-auto"
+                class="relative z-10 max-w-full mx-auto"
               />
-              <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2">
+              <span class="absolute -translate-x-1/2 -bottom-0 left-1/2">
                 <svg
                   class="sm:w-[600px] md:w-[630px] lg:w-[670px]"
                   width="550"
@@ -111,30 +196,30 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pb-32 pt-36 dark:bg-darkmode">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-10 lg:w-1/2">
-            <h4 class="font-bold uppercase text-primary text-lg mb-3">
+            <h4 class="mb-3 text-lg font-bold uppercase text-primary">
               About Me
             </h4>
             <h2
-              class="font-bold text-dark text-3xl mb-5 max-w-[26rem] lg:text-4xl"
+              class="font-bold text-dark text-3xl mb-5 max-w-[26rem] dark:text-white lg:text-4xl"
             >
               You won't remember a thing except me
             </h2>
-            <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">
+            <p class="max-w-xl text-base font-medium text-secondary dark:text-slate-400 lg:text-lg">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Voluptatum suscipit voluptatibus incidunt esse illo quo hic.
             </p>
           </div>
           <div class="w-full px-4 lg:w-1/2">
             <h3
-              class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10"
+              class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl lg:pt-10"
             >
               Be my partner
             </h3>
-            <p class="font-medium text-base text-secondary mb-6 lg:text-lg">
+            <p class="mb-6 text-base font-medium text-secondary dark:text-slate-400 lg:text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
               obcaecati, fugit labore accusantium commodi adipisci voluptate
               quam minima?
@@ -143,7 +228,7 @@
               <!-- Honkai Star Rail -->
               <a
                 href="#"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white dark:text-white"
               >
                 <svg
                   class="fill-current"
@@ -161,7 +246,7 @@
               <!-- Youtube -->
               <a
                 href="#"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white dark:text-white"
               >
                 <svg
                   class="fill-current"
@@ -179,7 +264,7 @@
               <!-- Instagram -->
               <a
                 href="#"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white dark:text-white"
               >
                 <svg
                   class="fill-current"
@@ -197,7 +282,7 @@
               <!-- Twitter -->
               <a
                 href="#"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white dark:text-white"
               >
                 <svg
                   class="fill-current"
@@ -215,7 +300,7 @@
               <!-- Hoyolab -->
               <a
                 href="#"
-                class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white dark:text-white"
               >
                 <svg
                   class="fill-current"
@@ -238,48 +323,94 @@
     <!-- About Section End -->
 
     <!-- Team Section Start -->
-    <section id="team" class="pt-36 pb-16 bg-fuchsia-100">
+    <section id="team" class="pb-16 pt-36 bg-fuchsia-100 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2">Team</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Our Professional Team</h2>
-            <p class="font-medium text-base text-secondary md:text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur possimus ad perspiciatis. Et, impedit commodi aliquid eos nulla earum facilis.</p>
+          <div class="max-w-xl mx-auto mb-16 text-center">
+            <h4
+              class="mb-2 text-lg font-semibold text-primary dark:text-lightprimary"
+            >
+              Team
+            </h4>
+            <h2
+              class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl"
+            >
+              Our Professional Team
+            </h2>
+            <p class="text-base font-medium text-secondary dark:text-slate-400 md:text-lg">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+              possimus ad perspiciatis. Et, impedit commodi aliquid eos nulla
+              earum facilis.
+            </p>
           </div>
         </div>
 
-        <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+        <div
+          class="flex flex-wrap justify-center w-full px-4 xl:w-10/12 xl:mx-auto"
+        >
           <!-- Kafka -->
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./team/kafka.jpg" alt="Space Website" class="w-full">
+          <div class="p-4 mb-12 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./team/kafka.jpg" alt="Space Website" class="w-full" />
             </div>
-            <h3 class="font-semibold text-dark text-xl mt-5 mb-3">Kafka</h3>
-            <p class="font-medium text-base text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore hic magnam, at unde vel!</p>
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Kafka
+            </h3>
+            <p class="text-base font-medium text-secondary dark:text-slate-400">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              tempore hic magnam, at unde vel!
+            </p>
           </div>
           <!-- Silverwolf -->
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./team/silverwolf.jpeg" alt="Rent Website" class="w-full">
+          <div class="p-4 mb-12 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img
+                src="./team/silverwolf.jpeg"
+                alt="Rent Website"
+                class="w-full"
+              />
             </div>
-            <h3 class="font-semibold text-dark text-xl mt-5 mb-3">Silverwolf</h3>
-            <p class="font-medium text-base text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore hic magnam, at unde vel!</p>
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Silverwolf
+            </h3>
+            <p class="text-base font-medium text-secondary dark:text-slate-400">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              tempore hic magnam, at unde vel!
+            </p>
           </div>
           <!-- Sam -->
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden max-h-4">
-              <img src="./team/sam.png" height="500" alt="Space Website" class="w-full">
+          <div class="p-4 mb-12 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./team/sam.png" alt="Space Website" class="w-full" />
             </div>
-            <h3 class="font-semibold text-dark text-xl mt-5 mb-3">Sam</h3>
-            <p class="font-medium text-base text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore hic magnam, at unde vel!</p>
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Sam
+            </h3>
+            <p class="text-base font-medium text-secondary dark:text-slate-400">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              tempore hic magnam, at unde vel!
+            </p>
           </div>
           <!-- Blade -->
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./team/blade.jpg" alt="Rent Website" class="w-full">
+          <div class="p-4 mb-12 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./team/blade.jpg" alt="Rent Website" class="w-full" />
             </div>
-            <h3 class="font-semibold text-dark text-xl mt-5 mb-3">Blade</h3>
-            <p class="font-medium text-base text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore hic magnam, at unde vel!</p>
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Blade
+            </h3>
+            <p class="text-base font-medium text-secondary dark:text-slate-400">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              tempore hic magnam, at unde vel!
+            </p>
           </div>
         </div>
       </div>
@@ -287,29 +418,52 @@
     <!-- Team Section End -->
 
     <!-- Client Section Start -->
-    <section id="clients" class="pt-36 pb-32 bg-fuchsia-700">
+    <section id="clients" class="pb-32 pt-36 bg-fuchsia-700 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-white mb-2">Clients</h4>
-            <h2 class="font-bold text-slate-100 text-3xl mb-4 sm:text-4xl lg:text-5xl">Our Partner</h2>
-            <p class="font-medium text-base text-slate-200 md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sed labore recusandae!</p>
-          </div>  
+          <div class="max-w-xl mx-auto mb-16 text-center">
+            <h4
+              class="mb-2 text-lg font-semibold text-white dark:text-lightprimary"
+            >
+              Clients
+            </h4>
+            <h2
+              class="mb-4 text-3xl font-bold text-slate-100 sm:text-4xl lg:text-5xl"
+            >
+              Our Partner
+            </h2>
+            <p class="text-base font-medium text-slate-200 md:text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis sed labore recusandae!
+            </p>
+          </div>
         </div>
 
         <div class="w-full px-4">
           <div class="flex flex-wrap items-center justify-center">
-            <a href="#" class="max-w-[150px] mx-4 py-4 grayscale hover:grayscale-0 transition duration-500 lg:mx-6 xl:mx-8 ">
-              <img src="./clients/Hoyoverse.png" alt="Hoyoverse">
+            <a
+              href="#"
+              class="max-w-[150px] mx-4 py-4 grayscale hover:grayscale-0 transition duration-500 lg:mx-6 xl:mx-8"
+            >
+              <img src="./clients/Hoyoverse.png" alt="Hoyoverse" />
             </a>
-            <a href="#" class="max-w-[150px] mx-4 py-4 grayscale hover:grayscale-0 transition duration-500 lg:mx-6 xl:mx-8 ">
-              <img src="./clients/HoYoLab.png" alt="HoYoLab">
+            <a
+              href="#"
+              class="max-w-[150px] mx-4 py-4 grayscale hover:grayscale-0 transition duration-500 lg:mx-6 xl:mx-8"
+            >
+              <img src="./clients/HoYoLab.png" alt="HoYoLab" />
             </a>
-            <a href="#" class="max-w-[150px] mx-4 py-4 grayscale hover:grayscale-0 transition duration-500 lg:mx-6 xl:mx-8 ">
-              <img src="./clients/Google.svg" alt="Google">
+            <a
+              href="#"
+              class="max-w-[150px] mx-4 py-4 grayscale hover:grayscale-0 transition duration-500 lg:mx-6 xl:mx-8"
+            >
+              <img src="./clients/Google.svg" alt="Google" />
             </a>
-            <a href="#" class="max-w-[150px] mx-4 py-4 grayscale hover:grayscale-0 transition duration-500 lg:mx-6 xl:mx-8 ">
-              <img src="./clients/Youtube.svg" alt="Youtube">
+            <a
+              href="#"
+              class="max-w-[150px] mx-4 py-4 grayscale hover:grayscale-0 transition duration-500 lg:mx-6 xl:mx-8"
+            >
+              <img src="./clients/Youtube.svg" alt="Youtube" />
             </a>
           </div>
         </div>
@@ -318,31 +472,70 @@
     <!-- Client Section End -->
 
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-32 bg-fuchsia-100">
+    <section id="contact" class="pb-32 pt-36 bg-fuchsia-100 dark:bg-darkmode">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Contact Me</h2>
-            <p class="font-medium text-base text-secondary md:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, alias?</p>
+          <div class="max-w-xl mx-auto mb-16 text-center">
+            <h4
+              class="mb-2 text-lg font-semibold text-primary dark:text-lightprimary"
+            >
+              Contact
+            </h4>
+            <h2
+              class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl"
+            >
+              Contact Me
+            </h2>
+            <p class="text-base font-medium text-secondary dark:text-slate-400 md:text-lg">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex,
+              alias?
+            </p>
           </div>
         </div>
 
-        <form action="" class="w-full lg:w-2/3 mx-auto">
+        <form action="" class="w-full mx-auto lg:w-2/3">
           <div class="w-full px-4 mb-8">
-            <label for="name" class="text-base text-primary font-bold">Name</label>
-            <input type="text" id="name" class="w-full text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+            <label
+              for="name"
+              class="text-base font-bold text-primary dark:text-lightprimary"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              class="w-full p-3 rounded-md text-dark dark:text-white dark:bg-slate-700 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+            />
           </div>
           <div class="w-full px-4 mb-8">
-            <label for="name" class="text-base text-primary font-bold">Email</label>
-            <input type="email" id="email" class="w-full text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+            <label
+              for="name"
+              class="text-base font-bold text-primary dark:text-lightprimary"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              class="w-full p-3 rounded-md text-dark dark:text-white dark:bg-slate-700 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+            />
           </div>
           <div class="w-full px-4 mb-8">
-            <label for="name" class="text-base text-primary font-bold">Message</label>
-            <textarea type="email" id="email" class="w-full text-dark p-3 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary resize-none h-36 "></textarea>
+            <label
+              for="name"
+              class="text-base font-bold text-primary dark:text-lightprimary"
+              >Message</label
+            >
+            <textarea
+              type="email"
+              id="email"
+              class="w-full p-3 rounded-md resize-none text-dark dark:text-white dark:bg-slate-700 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary h-36"
+            ></textarea>
           </div>
           <div class="w-full px-4">
-            <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:shadow-lg hover:opacity-80 transition duration-500">Submit</button>
+            <button
+              class="w-full px-8 py-3 text-base font-semibold text-white transition duration-500 rounded-full bg-primary hover:shadow-lg hover:opacity-80"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
@@ -350,57 +543,93 @@
     <!-- Contact Section End -->
 
     <!-- Footer Start -->
-    <footer class="bg-dark pt-24 pb-12">
+    <footer class="pt-24 pb-12 bg-dark dark:bg-slate-800">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-12 text-fuchsia-300 font-medium md:w-1/3">
-            <h2 class="font-bold text-4xl text-white mb-5">Stellaron Hunter</h2>
-            <h3 class="font-bold text-2xl mb-2">Contact Us</h3>
+          <div
+            class="w-full px-4 mb-12 font-medium text-fuchsia-300 dark:text-white md:w-1/3"
+          >
+            <h2 class="mb-5 text-4xl font-bold text-white">Stellaron Hunter</h2>
+            <h3 class="mb-2 text-2xl font-bold">Contact Us</h3>
             <p>kafkavollerei@gmail.com</p>
             <p>Penacony land of dreams</p>
           </div>
           <div class="w-full px-4 mb-12 md:w-1/3">
-            <h2 class="font-semibold text-xl text-white mb-5">Writing Category</h2>
-            <ul class="text-fuchsia-300">
+            <h2 class="mb-5 text-xl font-semibold text-white">
+              Writing Category
+            </h2>
+            <ul class="text-fuchsia-300 dark:text-white">
               <li>
-                <a href="#" class="inline-block text-base hover:text-white mb-2 ">Stellaron</a>
+                <a
+                  href="#"
+                  class="inline-block mb-2 text-base hover:text-white dark:hover:text-lightprimary"
+                  >Stellaron</a
+                >
               </li>
               <li>
-                <a href="#" class="inline-block text-base hover:text-white mb-2 ">Technology</a>
+                <a
+                  href="#"
+                  class="inline-block mb-2 text-base hover:text-white dark:hover:text-lightprimary"
+                  >Technology</a
+                >
               </li>
               <li>
-                <a href="#" class="inline-block text-base hover:text-white mb-2 ">Hunting</a>
+                <a
+                  href="#"
+                  class="inline-block mb-2 text-base hover:text-white dark:hover:text-lightprimary"
+                  >Hunting</a
+                >
               </li>
             </ul>
           </div>
           <div class="w-full px-4 mb-12 md:w-1/3">
-            <h2 class="font-semibold text-xl text-white mb-5">Links</h2>
-            <ul class="text-fuchsia-300">
+            <h2 class="mb-5 text-xl font-semibold text-white">Links</h2>
+            <ul class="text-fuchsia-300 dark:text-white">
               <li>
-                <a href="#home" class="inline-block text-base hover:text-white mb-2 ">Home</a>
+                <a
+                  href="#home"
+                  class="inline-block mb-2 text-base hover:text-white dark:hover:text-lightprimary"
+                  >Home</a
+                >
               </li>
               <li>
-                <a href="#about" class="inline-block text-base hover:text-white mb-2 ">About Me</a>
+                <a
+                  href="#about"
+                  class="inline-block mb-2 text-base hover:text-white dark:hover:text-lightprimary"
+                  >About Me</a
+                >
               </li>
               <li>
-                <a href="#team" class="inline-block text-base hover:text-white mb-2 ">Team</a>
+                <a
+                  href="#team"
+                  class="inline-block mb-2 text-base hover:text-white dark:hover:text-lightprimary"
+                  >Team</a
+                >
               </li>
               <li>
-                <a href="#clients" class="inline-block text-base hover:text-white mb-2 ">Clients</a>
+                <a
+                  href="#clients"
+                  class="inline-block mb-2 text-base hover:text-white dark:hover:text-lightprimary"
+                  >Clients</a
+                >
               </li>
               <li>
-                <a href="#contact" class="inline-block text-base hover:text-white mb-2 ">Contact</a>
+                <a
+                  href="#contact"
+                  class="inline-block mb-2 text-base hover:text-white dark:hover:text-lightprimary"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="w-full pt-10 border-t border-fuchsia-700">
+        <div class="w-full pt-10 border-t border-fuchsia-700 dark:border-white">
           <div class="flex items-center justify-center mb-5 text-white">
             <!-- Honkai Star Rail -->
             <a
               href="#"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+              class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 class="fill-current"
@@ -418,7 +647,7 @@
             <!-- Youtube -->
             <a
               href="#"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+              class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 class="fill-current"
@@ -436,7 +665,7 @@
             <!-- Instagram -->
             <a
               href="#"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+              class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 class="fill-current"
@@ -454,7 +683,7 @@
             <!-- Twitter -->
             <a
               href="#"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+              class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 class="fill-current"
@@ -472,7 +701,7 @@
             <!-- Hoyolab -->
             <a
               href="#"
-              class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+              class="flex items-center justify-center mr-3 transition duration-300 ease-in-out border rounded-full w-9 h-9 border-slate-300 hover:border-primary hover:bg-primary hover:text-white"
             >
               <svg
                 class="fill-current"
@@ -488,11 +717,37 @@
               </svg>
             </a>
           </div>
-          <p class="font-medium text-sm text-fuchsia-500 text-center">Made by <a href="https://instagram.com/this_is_chrissss" target="_blank" class="font-bold text-fuchsia-500 hover:text-white transition duration-300">Angelo</a>, using <a href="https://tailwindcss.com" target="_blank" class="font-bold text-fuchsia-500 hover:text-white transition duration-300">Tailwind CSS</a></p>
+          <p
+            class="text-sm font-medium text-center text-fuchsia-500 dark:text-slate-100"
+          >
+            Made by
+            <a
+              href="https://instagram.com/this_is_chrissss"
+              target="_blank"
+              class="font-bold transition duration-300 text-fuchsia-500 hover:text-white dark:text-white dark:hover:text-lightprimary"
+              >Angelo</a
+            >, using
+            <a
+              href="https://tailwindcss.com"
+              target="_blank"
+              class="font-bold transition duration-300 text-fuchsia-500 hover:text-white dark:text-white dark:hover:text-lightprimary"
+              >Tailwind CSS</a
+            >
+          </p>
         </div>
       </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- Back To Top Start -->
+    <a
+      href="#home"
+      id="to-top"
+      class="hidden items-center justify-center h-14 w-14 bg-primary p-4 fixed rounded-full z-[9999] bottom-4 right-4 text-2xl text-white hover:animate-pulse transition"
+    >
+      <i class="fa-solid fa-arrow-up"></i
+    ></a>
+    <!-- Back To Top End -->
 
     <script src="./js/script.js"></script>
   </body>
