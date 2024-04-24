@@ -2,32 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+  border: 1px solid red;
+} */
 
 body {
   font-family: "Sedan", sans-serif;
 }
 
 .menu-line {
-    @apply w-[30px] h-[2px] my-2 block bg-dark;
+  @apply w-[30px] h-[2px] my-2 block bg-dark;
 }
 
 .navbar-fixed {
-    @apply fixed z-[9999] bg-white bg-opacity-60 backdrop-blur-sm dark:bg-transparent dark:bg-opacity-50;
-    box-shadow: inset 0px -1px 0 0 rgba(0,0,0,0.1);
+  @apply fixed z-[9999] bg-white bg-opacity-60 backdrop-blur-sm dark:bg-transparent dark:bg-opacity-50;
+  box-shadow: inset 0px -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 .menu-active > span:nth-child(1) {
-    @apply rotate-45;
+  @apply rotate-45;
 }
 
 .menu-active > span:nth-child(2) {
-    @apply scale-0;
+  @apply scale-0;
 }
 
 .menu-active > span:nth-child(3) {
-    @apply -rotate-45;
+  @apply -rotate-45;
 }
 
 #dark-toggle:checked ~ label div.toggle-circle {
-    @apply translate-x-3 
+  @apply translate-x-3;
 }
